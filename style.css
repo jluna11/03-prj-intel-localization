@@ -1,0 +1,236 @@
+/* Global */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #0071c5, #004a86);
+  color: white;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero img {
+  max-width: 110px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 3px;
+  background-color: #7fc6ff;
+  margin: 1rem auto 1.25rem;
+}
+
+/* Timeline */
+#timeline {
+  background-color: #f4f6f9;
+  padding: 2rem 0 2.5rem;
+}
+
+#timeline h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.footer-note {
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.timeline-scroll {
+  overflow-x: auto;
+  padding: 2rem 0.5rem;
+  width: 100%;
+}
+
+.timeline-cards {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+  width: max-content;
+}
+
+.timeline-cards::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: #0071c5;
+  transform: translateY(-50%);
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 10px;
+  border-top: 4px solid #0071c5;
+  width: 260px;
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card h2 {
+  color: #0071c5;
+  margin: 0;
+}
+
+.card-image img {
+  width: 210px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Overlay */
+.card-description {
+  position: absolute;
+  inset: 0;
+  background-color: #0071c5;
+  color: white;
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover .card-description,
+.card.is-active .card-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover h2,
+.card:hover h3,
+.card:hover .card-image,
+.card.is-active h2,
+.card.is-active h3,
+.card.is-active .card-image {
+  opacity: 0;
+}
+
+/* Arrows */
+.arrow {
+  background: white;
+  border: none;
+  font-size: 2rem;
+  color: #0071c5;
+  cursor: pointer;
+}
+
+/* Highlights */
+.highlights {
+  padding: 3rem 1.5rem;
+}
+
+.highlights-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* KEY FIX */
+  background-color: #f4f6f9;
+  border-top: 4px solid #0071c5;
+  border-radius: 10px;
+  padding: 1.75rem;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.highlight-card h3 {
+  color: #0071c5;
+}
+
+.highlight-card a {
+  margin-top: auto; /* KEY FIX */
+  color: #0071c5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 3.5rem 1.5rem;
+}
+
+.newsletter-content {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #f4f6f9;
+  border-top: 4px solid #0071c5;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 0.75rem 1rem;
+  width: 260px;
+}
+
+.newsletter-form button {
+  background-color: #0071c5;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+}
+
+/* Footer */
+.page-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  padding: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .highlights-container {
+    flex-direction: column;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
